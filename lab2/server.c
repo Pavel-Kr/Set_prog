@@ -50,7 +50,7 @@ int main(){
             exit(EXIT_FAILURE);
         }
         else if(pid == 0){
-            printf("Child\n");
+            //Child
             close(serv_sock);
             for(int i=0;i<10;i++){
                 int bytes = recv(client_sock, message, sizeof(message), 0);
@@ -71,6 +71,7 @@ int main(){
             return 0;
         }
         else{
+            //Parent, do nothing
             close(client_sock);
         }
     }
