@@ -50,5 +50,5 @@ int main(){
         i++;
         sleep(num);
     }
-    shutdown(client_sock, SHUT_RDWR);
+    close(client_sock);
 }
