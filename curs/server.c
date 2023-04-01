@@ -205,7 +205,8 @@ int main(){
         }
         else if(c=='u'){
             for(int i=0;i<users_count;i++){
-                printf("%s %s(%d)\t%d\n",users[i].user.name,inet_ntoa(users[i].user.endp.sin_addr),ntohs(users[i].user.endp.sin_port),users[i].deleted);
+                if(!users[i].deleted)
+                    printf("%s %s(%d)\n",users[i].user.name,inet_ntoa(users[i].user.endp.sin_addr),ntohs(users[i].user.endp.sin_port));
             }
             printf("Total users count: %d\nActive users count: %d\n",users_count,active_users_count);
         }
